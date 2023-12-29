@@ -1,3 +1,4 @@
+import MyPageSidebar from "../../components/Mypage/MyPageSidebar";
 import AuthAxios from "../../utils/axios/AuthAxios";
 import "./MyMission.css";
 import React, {useState, useEffect} from "react";
@@ -97,7 +98,7 @@ function MyMission() {
         <div className="my-mission-index">
             <div className="my-mission-wrap-wrapper">
                 <div className="my-mission-wrap">
-                    <div className="mypage-sidebar-wrap">
+                    {/* <div className="mypage-sidebar-wrap">
                         <div className="sidebar-frame">
                             <div className="sidebar" />
                         </div>
@@ -160,7 +161,8 @@ function MyMission() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+                     <MyPageSidebar />
                     <div className="my-mission-right">
                         <div className="div">
                             <div className="div">

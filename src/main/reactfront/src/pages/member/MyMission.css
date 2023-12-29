@@ -19,38 +19,8 @@
     position: relative;
 
 }
-
-.my-mission-index .mypage-sidebar-wrap {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 10px;
-    height: 1000px;
-    position: relative;
-    margin-left: -235px;
-}
-
-.my-mission-index .sidebar-frame {
-    height: 950px;
-    position: fixed;
-    width: 80px;
-    
-}
-
 .my-mission-index .sidebar {
     background-color: #03c75a;
-    height: 945px;
-    width: 80px;
-    position: relative;
-    top: -2px;
-}
-
-.my-mission-index .sidebar-shortcut {
-    height: 708px;
-    left: 16px;
-    position: absolute;
-    top: 30px;
-    width: 48px;
 }
 
 .my-mission-index .favicon-logo {
