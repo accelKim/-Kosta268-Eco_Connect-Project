@@ -6,10 +6,11 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import { Link } from "react-router-dom";
-import AuthAxios from '../../../utils/axios/AuthAxios';
-import './missionComponent2.css';
+import AuthAxios from '../../utils/axios/AuthAxios';
+import './NoticeCard.css';
 
-const MissionComponent2 = ({ selectedCategory }) => {
+
+const NoticeCard = ({ selectedCategory , data}) => {
   // const [missions, setMissions] = useState([]);
 
   // useEffect(() => {
@@ -42,12 +43,13 @@ const MissionComponent2 = ({ selectedCategory }) => {
 
 
 
+
   
   const fetchMission = () => {
-      AuthAxios.get(`/api/missions`)
+      AuthAxios.get(`/api/faq`)
           .then((response) => {
               console.log(response);
-              setLists(response.data.content);
+              setLists(response.data);
           })
   }
 
@@ -59,10 +61,10 @@ const MissionComponent2 = ({ selectedCategory }) => {
     // selectedCategory가 변경될 때마다 fundings를 필터링하여 filteredFundings에 저장
     if (selectedCategory) {
       // 만약 selectedCategory가 정의되어 있다면, 해당 카테고리를 기반으로 fundings 필터링
-      setFilteredLists(lists.filter(funding => funding.category === selectedCategory));
+      setFilteredLists(lists.filter(faq => faq.category === selectedCategory));
     } else {
       // 만약 selectedCategory가 정의되지 않았다면, missions 배열에서 상위 10개 항목을 가져오기
-      setFilteredLists(lists.slice(0, 8));
+      setFilteredLists(lists);
     }
   }, [selectedCategory, lists]);
 
@@ -76,23 +78,24 @@ const MissionComponent2 = ({ selectedCategory }) => {
   };
 
   return (
-    <Row xs={1} md={calculateMdValue()} className="g-5" style={{maxWidth:'1100px'}}>
+     <div className='Notice_faq_index'>
+    <Row xs={1} md={calculateMdValue()} className="g-4" style={{maxWidth:'1100px'}}>
       {filteredLists.map((item, index) => (
          <Col key={index}>
-        <Card style={{ width: '15rem',borderRadius:'25px'}}>
-      <Card.Img variant="top" src= {item.image} className='mission-image-main' />
+        <Card style={{ borderRadius:'15px',height:'10rem'}}>
       <Card.Body>
+        <div className='Q'>Q</div>
         <div className='mission-info-wrap'>
-        <Card.Title className='mission-name-text' style={{fontSize:'14px'}}>{item ? item.title : "Loading..."} </Card.Title>
-        <Card.Text className='mission-point-text'>{item ? item.point : "Loading..."}P</Card.Text></div>
-        <Link to={`/mission/${item.missionId}`} style={{ textDecoration: 'none' }}>
-        <Button variant="success" style={{color:'white',margin:"0 auto",width:'200px'}}>참여하기</Button></Link>
+        <Card.Title className='mission-name-text'>{item ? item.title : "Loading..."} </Card.Title>
+        </div>
+        <div className='tag'># ㅤ에코커넥트</div>
       </Card.Body>
     </Card>
     </Col>
       ))}
     </Row>
+    </div>
   );
 };
 
-export default MissionComponent2;
+export default NoticeCard;

@@ -25,5 +25,8 @@ public class Faq {
   @Column(name = "created_at")
   private String   created_at;
 
+  @Column(name = "category")
+  private Integer category;
+
 
 }

@@ -7,17 +7,19 @@ import Nav from 'react-bootstrap/Nav';
 import Button from "react-bootstrap/esm/Button";
 
 import MissionPageNation from "../../components/PageNation/MGPageNation";
+import MissionComponent2 from "../../components/Card/MainPageCards/missionComponent2";
 
 function MissionList() {
     const [lists, setLists] = useState([]);
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [category, setCategory] = useState('전체');
+    const [category, setCategory] = useState('');
     const [status, setStatus] = useState("OPEN");
     const [title, setTitle] = useState("");
     
     const fetchMission = () => {
+        
         AuthAxios.get(`/api/missions?page=${page}`)
             .then((response) => {
                 setLists(response.data.content);
@@ -228,7 +230,7 @@ function MissionList() {
                     <div className="mission-middle-menu">
                         <Nav variant="phills" defaultActiveKey="#">
                               <Nav.Item >
-                                <Nav.Link href="#" className="nav-text" onClick={() => handleCategory('전체')}>전체</Nav.Link>
+                                <Nav.Link href="#" className="nav-text" onClick={() => handleCategory('')}>전체</Nav.Link>
                               </Nav.Item>
                               <Nav.Item>
                                 <Nav.Link eventKey="link-1" href="#"className="nav-text" onClick={() => handleCategory("참여형")}>참여형</Nav.Link>
@@ -359,7 +361,8 @@ function MissionList() {
                                 </div>
                             </div>
                         </div>
-                        <div className="mission-list-wrap-2">
+                        <MissionComponent2 selectedCategory={category}/>
+                        {/* <div className="mission-list-wrap-2">
                             {filteredMissions.map((item, index) => {
                                 return (
                                     <div className="mission-list">
@@ -393,7 +396,7 @@ function MissionList() {
                                     </div>
                                 )
                             })}
-                        </div>
+                        </div> */}
                         {/* <div className="pagination-button">
                             <div className="pagination-left-wrap">
                                 <button className="pagination-left" onClick={() => {

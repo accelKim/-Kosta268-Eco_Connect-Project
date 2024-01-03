@@ -144,6 +144,21 @@ function GatheringUpdate() {
     return (
         <div className="gathering-update-index">
             <div className="add-wrap-wrapper">
+            <div className="main-banner">
+                    <div className="main-banner-big-text-wrapper">
+                        <p className="main-banner-big-text">
+                            똑같은 봉사라도 더 다채롭게 <br />
+                            만들어 줄 원데이 취향 모임
+                        </p>
+                    </div>
+                    <div className="card-info-text-small">
+                        <p className="card-info-text-small-2">
+                            누구나 열고 참여할 수 있는 원데이모임,
+                        
+                            소셜링으로 가볍고 즐겁게 만나보세요!
+                        </p>
+                    </div>
+                </div>
                 <div className="add-wrap">
                     <div className="gathering-update-form-wrap">
                         <div className="gathering-update-text">봉사모임 수정</div>

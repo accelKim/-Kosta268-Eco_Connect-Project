@@ -5,6 +5,8 @@ import { useLocation, useSearchParams, Link } from "react-router-dom";
 import AuthAxios from "../../utils/axios/AuthAxios";
 import Nav from 'react-bootstrap/Nav';
 import MGPageNation from "../../components/PageNation/MGPageNation";
+import GatheringComponent from "../../components/Card/MainPageCards/gatheringComponent";
+import GatheringNav from '../../components/Nav/GatheringNav';
 
 function GatheringList() {
 
@@ -154,21 +156,7 @@ function GatheringList() {
             </div>
             <div className="middle-menu-wrap">
                
-            <Nav variant="phills" defaultActiveKey="#">
-      <Nav.Item >
-        <Nav.Link href="#" className="nav-text">전체</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1" href="#"className="nav-text">환경미화</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-      <Nav.Link eventKey="link-2" href="#"className="nav-text">재능기부</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-      <Nav.Link eventKey="link-3" href="#"className="nav-text">재능기부</Nav.Link>
-      </Nav.Item>
-    </Nav>
-
+         <GatheringNav onSelectCategory={setCategory}/>
 
                 {/* <div className="middle-menu-blank" /> */}
                 <div className="middle-menu-search">
@@ -191,65 +179,8 @@ function GatheringList() {
                     </select>
                 </div>
             </div>
-           
-
-
-            <div className="gathering-list-wrap">
-                {lists.map((item, index) => (
-                    <div className="gathering-list">
-                        <div className="gathering-list-2">
-                            <Link to={`/gathering/${item.gatheringId}`} ><div className="gathering-list-image" style={{ backgroundImage: `url(${item.image})` }} /></Link>
-                            <div className="gathering-list-info">
-                                <div className="gathering-list-title">
-                                    <Link to={`/gathering/${item.gatheringId}`} style={{textDecoration: 'none'}}><div className="gathering-list-title-2">{item.title}</div></Link>
-                                </div>
-                                <div className="gathering-list-sum"><Link to={`/gathering/${item.gatheringId}`} style={{textDecoration: 'none', color:'black'}}>{item.intro}</Link></div>
-                                <div className="gathering-list-3">
-                                    <img
-                                        className="gathering-list-4"
-                                        alt="Gathering list"
-                                        src="https://cdn.animaapp.com/projects/6560b21274de9042f7d947f4/releases/656753efcb8de04689f6bb1b/img/frame-427318306.svg"
-                                    />
-                                    <div className="gathering-list-5">
-                                        <img
-                                            className="gathering-list-6"
-                                            alt="Gathering list"
-                                            src="https://cdn.animaapp.com/projects/6560b21274de9042f7d947f4/releases/656753efcb8de04689f6bb1b/img/group@2x.png"
-                                        />
-                                        <div className="gathering-list-7">
-                                            <div className="text-wrapper-3">{item.count}/{item.capacity}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <GatheringComponent selectedCategory={category}/>
             <div className="gathering-list-8">
-                {/* <div className="pagination-button">
-                    <div className="pagination-left-wrap">
-                        <button className="pagination-left" onClick={() => setPage(oldPage => Math.max(oldPage - 1, 0))} disabled={page === 0}>
-                            &lt;&lt;
-                        </button>
-                    </div>
-
-                    <div className="pagination">
-                        {createPageNumberArray(0, totalPages - 1).map(pageNumber => (
-                            <button className={`text-wrapper-4 ${pageNumber === page ? "active" : ""}`}
-                                    key={pageNumber}
-                                    onClick={() => setPage(pageNumber)}
-                                    disabled={pageNumber === page}>
-                                {pageNumber + 1}
-                            </button>
-                        ))}
-                    </div>
-                    <div className="pagination-right"  onClick={() => setPage(oldPage => Math.min(oldPage + 1, totalPages - 1))} disabled={page === totalPages - 1}>
-                        <button className="double-right-wrapper">
-                            &gt;&gt;
-                        </button>
-                    </div>
-                </div> */}
                  <MGPageNation page={page} totalPages={totalPages} setPage={setPage} />
                 <div className="register-button-wrap">
                     <div className="register-button">

@@ -1,0 +1,18 @@
+.Notice_faq_index .Q {
+    font-size: 25px;
+    font-weight: 900;
+}
+.Notice_faq_index .mission-name-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+.Notice_faq_index .tag {
+    background-color: #03c75a;
+    padding-left: 10px;
+    color: white;
+    width: 150px;
+    border-radius: 15px;
+}
+.Notice_faq_index .mission-info-wrap {
+    margin-bottom: 40px;
+}

@@ -8,7 +8,7 @@
 
 .gathering-update-index .add-wrap-wrapper {
     background-color: #ffffff;
-    height: 1700px;
+    height: 2100px;
     width: 1473px;
 }
 
@@ -216,4 +216,57 @@
 }
 .gathering-update-index button:active {
     background-color: #009e47;
+}
+
+.gathering-update-index .main-banner {
+    align-items: center;
+    background-color: #03c75a;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 350px;
+    justify-content: center;
+    position: relative;
+    width: 1440px;
+}
+
+.gathering-update-index .main-banner-big-text-wrapper {
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    height: 120px;
+    position: relative;
+    width: 476px;
+}
+
+.gathering-update-index .main-banner-big-text {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.gathering-update-index .card-info-text-small {
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.gathering-update-index .card-info-text-small-2 {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+    margin: 0 auto;
 }

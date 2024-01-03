@@ -35,6 +35,7 @@ import Reward from "./pages/reward/Reward";
 import MyPageMember from "./pages/mypage/MyPageMember";
 import MyPageGathering from "./pages/mypage/MyPageGathering";
 import MyPageMission from "./pages/mypage/MyPageMission";
+import NoticeList from "./pages/notice/FaqList";
 
 function PrivateRoute({ children }) {
     const [login, setLogin] = useRecoilState(loginState);
@@ -100,6 +101,9 @@ function App() {
                     <Route path={"/mypage/mission"} element={<MyPageMission />} />
                     <Route path={"/mypage/mission/test"} element={<MyMission />} />
                     <Route path={"/mypage/gathering"} element={<MyPageGathering/>}/>
+
+                    {/* Notice */}
+                    <Route path={"/notice/notice"} element={<NoticeList/>}/>
 
                 </Route>
 
